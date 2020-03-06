@@ -1,1 +1,15 @@
-welcome to the homepage
+<% content_for :page_title, "Home" %>
+
+<div class="row">
+  <div class="col-8">
+    <p class="h4">Latest Posts</p>
+
+    <% @posts.each do |post| %>
+      <%= render partial: "posts/post", locals: { post: post } %>
+    <% end %>
+  </div>
+  <div class="col-4">
+    <p class="h4">About</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+  </div>
+</div>
