@@ -1,3 +1,6 @@
 <h1><%= @post.title %></h1>
+<p><small><%= post_meta @post %></small></p>
 
 <%= simple_format @post.body %>
+
+<%= render partial: "posts/view_form", locals: { post: @post } %>

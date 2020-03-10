@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :save_post_view]
 
   # GET /posts
   def index
@@ -43,6 +43,11 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
+  end
+
+  def save_post_view
+    # increment view count for post
+    @post.increment(:views, 1).save
   end
 
   private
