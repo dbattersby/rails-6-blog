@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   validates :body, presence: true
 
   belongs_to :category
+  belongs_to :account
 
   # callbacks - validation / save / create /update / destroy
   after_create :update_total_posts_count
